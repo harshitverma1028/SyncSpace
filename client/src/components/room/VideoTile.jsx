@@ -1,0 +1,2 @@
+import { useEffect, useRef } from "react";
+export default function VideoTile({ stream, name, initials, local, muted }) { const ref = useRef(null); useEffect(() => { if (ref.current) ref.current.srcObject = stream || null; }, [stream]); return <div className="video-tile">{stream && !muted ? <video ref={ref} autoPlay playsInline muted={local} /> : <div className="video-avatar">{initials || "??"}</div>}<div className="tile-name">{name}</div>{stream && <div className="tile-live">LIVE</div>}</div>; }

@@ -1,0 +1,1 @@
+export default function Control({ onClick, label, icon, active = true, danger }) { return <button title={label} className={`control ${active ? "active" : ""} ${danger ? "danger" : ""}`} onClick={onClick}>{icon}<small>{label}</small></button>; }
